@@ -31,6 +31,17 @@
     .cart-count { background: var(--accent); color: white; border-radius: 100px; padding: 2px 7px; font-size: 0.72rem; font-weight: 800; min-width: 20px; text-align: center; display: none; }
     .cart-count.visible { display: inline-block; }
 
+    /* Cart button shake animation */
+    @keyframes cartShake {
+      0%   { transform: scale(1); }
+      20%  { transform: scale(1.12) rotate(-4deg); }
+      40%  { transform: scale(1.12) rotate(4deg); }
+      60%  { transform: scale(1.08) rotate(-2deg); }
+      80%  { transform: scale(1.04) rotate(1deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+    .cart-nav-btn.shake { animation: cartShake 0.45s ease; }
+
     /* HERO */
     .hero { padding: 130px 5vw 70px; display: flex; align-items: center; gap: 60px; min-height: 88vh; }
     .hero-content { flex: 1; max-width: 560px; }
@@ -233,7 +244,7 @@
       <li><a href="#features">Why Us</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="cart-nav-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+    <button class="cart-nav-btn" id="cartNavBtn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
   </div>
 </nav>
 
@@ -251,13 +262,13 @@
   <div class="hero-visual">
     <div class="hero-img-wrap">
       <div class="hero-img-bg">
-        <img src="assets/home.jpeg" alt="Seeken products"/>
+        <img src="assets/home.jpg" alt="Seeken products"/>
       </div>
       <div class="hero-float-badge">
         <div class="hfb-num">80+</div>
         <div class="hfb-label">Products In Stock</div>
       </div>
-      <div class="hero-float-tag">✓ Genuine Seeken</div>
+      <div class="hero-float-tag">✓ Seeken</div>
     </div>
   </div>
 </section>
@@ -301,8 +312,6 @@
         <div class="card-footer"><div class="card-price"><span class="currency">K</span>24</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
-
-
 
     <div class="product-card reveal" data-cat="cables" data-id="c4" data-name="Seeken SPDC-180 C-to-C 1M Cable (Grey)" data-price="39" data-img="assets/cable-ctoc-spdc180-1m.jpg">
       <div class="card-img"><div class="card-badge badge-hot">411 in stock</div><img src="assets/ctoc.jpg" alt="C to C 1M"/></div>
@@ -365,7 +374,7 @@
     </div>
 
     <div class="product-card reveal" data-cat="cables" data-id="c10" data-name="Seeken SMG-C22 Magneto USB-C to iOS (White)" data-price="131" data-img="assets/cable-magneto-smgc22-ctoc-ios.jpg">
-      <div class="card-img"><img src="assets/magneto%204.JPG" alt="Magneto C to iOS"/></div>
+      <div class="card-img"><img src="assets/magneto 4.JPG" alt="Magneto C to iOS"/></div>
       <div class="card-body">
         <div class="card-code">ITM00633</div><div class="card-category">Cables</div>
         <div class="card-title">SMG-C22 Magneto USB-C to iOS</div>
@@ -385,8 +394,6 @@
       </div>
     </div>
 
-
-
     <div class="product-card reveal" data-cat="chargers" data-id="ch3" data-name="Seeken SHS-100 Wireless Charger (Red)" data-price="160" data-img="assets/charger-wireless-shs100-red.jpg">
       <div class="card-img"><div class="card-badge badge-hot">120 in stock</div><img src="assets/100.jpg" alt="Wireless Charger"/></div>
       <div class="card-body">
@@ -397,7 +404,7 @@
       </div>
     </div>
 
-    <div class="product-card reveal" data-cat="chargers" data-id="ch4" data-name="Seeken SCQQ-603 Car Charger + iOS Cable (Black)" data-price="100" data-img="assets/charger-car-scqq603-ios.jpg">
+    <div class="product-card reveal" data-cat="chargers" data-id="ch4" data-name="Seeken SCQQ-603 Car Charger + iOS Cable (Black)" data-price="70" data-img="assets/charger-car-scqq603-ios.jpg">
       <div class="card-img"><img src="assets/603.JPG" alt="Car Charger iOS"/></div>
       <div class="card-body">
         <div class="card-code">ITM00546</div><div class="card-category">Chargers</div>
@@ -406,7 +413,6 @@
         <div class="card-footer"><div class="card-price"><span class="currency">K</span>70</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
-
 
     <!-- ══════════ POWER BANKS ══════════ -->
     <div class="product-card reveal" data-cat="powerbanks" data-id="pb1" data-name="Seeken SMF-P55 Mag Power Booster 10K mAh (Blue)" data-price="0" data-img="assets/powerbank-smfp55-mag-10k-blue.jpg">
@@ -439,7 +445,6 @@
       </div>
     </div>
 
-  
     <!-- ══════════ AUDIO ══════════ -->
     <div class="product-card reveal" data-cat="audio" data-id="a1" data-name="Seeken SBR-SP1 SoundBreeze Earphones (Black)" data-price="300" data-img="assets/audio-earphones-sbrsp1-black.jpg">
       <div class="card-img"><div class="card-badge badge-hot">198 in stock</div><img src="assets/p1.jpg" alt="SoundBreeze SP1"/></div>
@@ -501,12 +506,6 @@
       </div>
     </div>
 
-    
-
-
-
-    
-
     <div class="product-card reveal" data-cat="audio" data-id="a10" data-name="Seeken SLA-M1 iOS AUX with Mic (Black)" data-price="150" data-img="assets/audio-earphones-slam1-ios-aux-mic-black.jpg">
       <div class="card-img"><img src="assets/mic.jpg" alt="iOS AUX Mic"/></div>
       <div class="card-body">
@@ -548,44 +547,39 @@
       </div>
     </div>
 
-  
-
     <!-- ══════════ SMARTWATCHES ══════════ -->
-    <div class="product-card reveal" data-cat="smartwatch" data-id="sw1" data-name="Seeken SGR-N2 Gravity Next Smart Watch (Black)" data-price="0" data-img="assets/watch-sgrn2-gravity-next-black.jpg">
+    <div class="product-card reveal" data-cat="smartwatch" data-id="sw1" data-name="Seeken SGR-N2 Gravity Next Smart Watch (Black)" data-price="315" data-img="assets/watch-sgrn2-gravity-next-black.jpg">
       <div class="card-img"><div class="card-badge badge-hot">247 in stock</div><img src="assets/wat.jpg" alt="Gravity Next Watch"/></div>
       <div class="card-body">
         <div class="card-code">ITM01140</div><div class="card-category">Smartwatches</div>
         <div class="card-title">SGR-N2 Gravity Next Smart Watch</div>
         <div class="card-desc">Latest Seeken Gravity Next smartwatch. Heart rate, step tracking, notifications, stylish display. SOH: 247.</div>
         <div class="card-footer"><div class="card-price"><span class="currency">K</span>315</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
-     </div>
+      </div>
     </div>
 
-   
-
-    <div class="product-card reveal" data-cat="smartwatch" data-id="sw3" data-name="Seeken SGR-N1 Gravity Next Smart Watch (Black)" data-price="417" data-img="assets/watch-sgrn1-gravity-next-black.jpg">
+    <div class="product-card reveal" data-cat="smartwatch" data-id="sw3" data-name="Seeken SGR-N1 Gravity Smart Watch (Black)" data-price="411" data-img="assets/watch-sgrn1-gravity-next-black.jpg">
       <div class="card-img"><div class="card-badge badge-new">120 in stock</div><img src="assets/watc.jpg" alt="Gravity N1 Watch"/></div>
       <div class="card-body">
         <div class="card-code">ITM00950</div><div class="card-category">Smartwatches</div>
-        <div class="card-title">SGR- 1 Gravity Smart Watch</div>
+        <div class="card-title">SGR-1 Gravity Smart Watch</div>
         <div class="card-desc">Gravity smartwatch. Multi-sport modes, health monitoring, large display. SOH: 120.</div>
         <div class="card-footer"><div class="card-price"><span class="currency">K</span>411</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
 
-    <div class="product-card reveal" data-cat="smartwatch" data-id="sw4" data-name="Seeken SGR-1 Smart Watch (Grey/Silver)" data-price="763" data-img="assets/watch-sgr1-gravity-silver.jpg">
+    <div class="product-card reveal" data-cat="smartwatch" data-id="sw4" data-name="Seeken SGR-2 Gravity Smart Watch (Grey/Silver)" data-price="417" data-img="assets/watch-sgr1-gravity-silver.jpg">
       <div class="card-img"><div class="card-badge badge-hot">187 in stock</div><img src="assets/watch.jpg" alt="SGR-1 Watch"/></div>
       <div class="card-body">
         <div class="card-code">ITM00564</div><div class="card-category">Smartwatches</div>
-        <div class="card-title">SGR-2 Gravity Smart Watch </div>
+        <div class="card-title">SGR-2 Gravity Smart Watch</div>
         <div class="card-desc">Seeken Gravity 2 smartwatch in black. Elegant design with full smart features. SOH: 179.</div>
         <div class="card-footer"><div class="card-price"><span class="currency">K</span>417</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
 
-   
     <!-- ══════════ OTHERS ══════════ -->
-    <div class="product-card reveal" data-cat="others" data-id="o1" data-name="Seeken SCH-1443 Car Holder" data-price="55" data-img="assets/other-car-holder-sch1442.jpg">
+    <div class="product-card reveal" data-cat="others" data-id="o1" data-name="Seeken SCH-1442 Car Holder" data-price="55" data-img="assets/other-car-holder-sch1442.jpg">
       <div class="card-img"><div class="card-badge badge-hot">177 in stock</div><img src="assets/1442.jpg" alt="Car Holder"/></div>
       <div class="card-body">
         <div class="card-code">ITM01043</div><div class="card-category">Others</div>
@@ -626,7 +620,7 @@
     <p class="section-sub">Every product is genuine Seeken — sourced directly, in stock and ready to go.</p>
   </div>
   <div class="features-grid">
-    <div class="feature-card reveal"><div class="feature-icon">✅</div><div class="feature-title">100%  Seeken</div><div class="feature-desc">All products listed are authentic Seeken brand, sourced directly.</div></div>
+    <div class="feature-card reveal"><div class="feature-icon">✅</div><div class="feature-title">100% Seeken</div><div class="feature-desc">All products listed are authentic Seeken brand, sourced directly.</div></div>
     <div class="feature-card reveal"><div class="feature-icon">📦</div><div class="feature-title">In-Stock Ready</div><div class="feature-desc">Everything shown is available in stock right now. Real SOH numbers from our inventory.</div></div>
     <div class="feature-card reveal"><div class="feature-icon">💬</div><div class="feature-title">Personal Support</div><div class="feature-desc">Order directly via WhatsApp. You speak to a real person — fast responses guaranteed.</div></div>
     <div class="feature-card reveal"><div class="feature-icon">🚀</div><div class="feature-title">Fast Delivery</div><div class="feature-desc">Same-day or next-day delivery. Bulk orders and reseller pricing available on request.</div></div>
@@ -655,7 +649,7 @@
     <li><a href="#catalog">Power Banks</a></li>
     <li><a href="#catalog">Audio</a></li>
     <li><a href="#catalog">Smartwatches</a></li>
-    <li><a href="#catalog">Phone Cases</a></li>
+    <li><a href="#catalog">Others</a></li>
   </ul>
   <div class="footer-copy">© 2026 Seeken. All rights reserved.</div>
 </footer>
@@ -677,6 +671,14 @@
     document.body.style.overflow = '';
   }
 
+  function shakeCartBtn() {
+    const btn = document.getElementById('cartNavBtn');
+    btn.classList.remove('shake');
+    void btn.offsetWidth;
+    btn.classList.add('shake');
+    setTimeout(() => btn.classList.remove('shake'), 500);
+  }
+
   function addToCart(btn) {
     const card  = btn.closest('.product-card');
     const id    = card.dataset.id;
@@ -689,8 +691,9 @@
     btn.classList.add('added');
     setTimeout(() => { btn.innerHTML = '🛒 Add'; btn.classList.remove('added'); }, 1500);
     updateCartUI();
-    showToast('Added to cart!');
-    openCart();
+    shakeCartBtn();
+    showToast('Added to cart! Tap Cart to review.');
+    /* Cart drawer does NOT open automatically */
   }
 
   function changeQty(id, delta) {
@@ -759,7 +762,7 @@
     t.textContent = msg;
     t.classList.add('show');
     clearTimeout(window._toastTimer);
-    window._toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+    window._toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
   }
 
   function filterProducts(cat, btn) {
