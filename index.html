@@ -309,7 +309,7 @@
         <div class="card-code">ITM00485</div><div class="card-category">Cables</div>
         <div class="card-title">SC-906 iOS Lightning Cable</div>
         <div class="card-desc">Fast charging Lightning cable in black. Compatible with all iPhone & iPad models. SOH: 474 units.</div>
-        <div class="card-footer"><div class="card-price"><span class="currency">K</span>24</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
+        <div class="card-footer"><div class="card-price"><span class="currency">K</span>30</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
 
@@ -319,7 +319,7 @@
         <div class="card-code">ITM01023</div><div class="card-category">Cables</div>
         <div class="card-title">SPDC-180 USB-C to USB-C 1M</div>
         <div class="card-desc">USB-C to USB-C 1 metre cable in grey. 100W PD fast charging compatible. SOH: 411 units.</div>
-        <div class="card-footer"><div class="card-price"><span class="currency">K</span>39</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
+        <div class="card-footer"><div class="card-price"><span class="currency">K</span>40</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
 
@@ -462,7 +462,7 @@
         <div class="card-code">ITM01250</div><div class="card-category">Audio</div>
         <div class="card-title">SoundBreeze SBR-XX1 30W Speaker</div>
         <div class="card-desc">Powerful 30W Bluetooth speaker. Deep bass, wireless, portable design. SOH: 198 units.</div>
-        <div class="card-footer"><div class="card-price"><span class="price-enquire">Enquire for price</span></div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
+        <div class="card-footer"><div class="card-price">K400</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
 
@@ -554,7 +554,7 @@
         <div class="card-code">ITM01140</div><div class="card-category">Smartwatches</div>
         <div class="card-title">SGR-N2 Gravity Next Smart Watch</div>
         <div class="card-desc">Latest Seeken Gravity Next smartwatch. Heart rate, step tracking, notifications, stylish display. SOH: 247.</div>
-        <div class="card-footer"><div class="card-price"><span class="currency">K</span>315</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
+        <div class="card-footer"><div class="card-price"><span class="currency">K</span>350</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
 
@@ -589,6 +589,27 @@
       </div>
     </div>
 
+      <div class="product-card reveal" data-cat="others" data-id="sk_sqs100" data-name="Seeken SQS-100 Nova Socket (Brown)" data-price="215" data-img="assets/socket.jpg">
+      <div class="card-img"><img src="assets/socket1.jpg" alt="SQS-100 Nova Brown"/></div>
+      <div class="card-body">
+        <div class="card-code">ITM00691</div><div class="card-category">Sockets</div>
+        <div class="card-title">SQS-100 Nova Socket (Brown)</div>
+        <div class="card-desc">Nova extension socket in brown. Classic robust design, multiple outlets for home or office.</div>
+        <div class="card-footer"><div class="card-price"><span class="currency">K</span>80</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
+      </div>
+    </div>
+
+    
+    <div class="product-card reveal" data-cat="others" data-id="sk_ssk_an3" data-name="Seeken SSK-AN3 Auto Nova Socket (White)" data-price="199" data-img="assets/charger.jpg">
+      <div class="card-img"><img src="assets/socket2.jpg" alt="SSK-AN3 Auto Nova"/></div>
+      <div class="card-body">
+        <div class="card-code">ITM00705</div><div class="card-category">Sockets</div>
+        <div class="card-title">SSK-AN3 Auto Nova Socket (White)</div>
+        <div class="card-desc">Auto Nova multi-outlet socket in white. Smart design for safe and reliable everyday use.</div>
+        <div class="card-footer"><div class="card-price"><span class="currency">K</span>95</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
+      </div>
+    </div>
+
     <div class="product-card reveal" data-cat="others" data-id="o2" data-name="Seeken SCH-1010 Car Holder" data-price="55" data-img="assets/other-car-holder-sch1010.jpg">
       <div class="card-img"><img src="assets/1010.jpg" alt="Car Holder 1010"/></div>
       <div class="card-body">
@@ -608,6 +629,7 @@
         <div class="card-footer"><div class="card-price"><span class="currency">K</span>50</div><button class="card-btn" onclick="addToCart(this)">🛒 Add</button></div>
       </div>
     </div>
+    
 
   </div>
 </section>
@@ -658,128 +680,192 @@
 
 <script>
   const cart = {};
-  const WA_NUMBER = '260779478105';
+const WA_NUMBER = '260779478105';
 
-  function openCart() {
-    document.getElementById('cartDrawer').classList.add('open');
-    document.getElementById('cartOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeCart() {
-    document.getElementById('cartDrawer').classList.remove('open');
-    document.getElementById('cartOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+function openCart() {
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
-  function shakeCartBtn() {
-    const btn = document.getElementById('cartNavBtn');
-    btn.classList.remove('shake');
-    void btn.offsetWidth;
-    btn.classList.add('shake');
-    setTimeout(() => btn.classList.remove('shake'), 500);
-  }
+function closeCart() {
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
-  function addToCart(btn) {
-    const card  = btn.closest('.product-card');
-    const id    = card.dataset.id;
-    const name  = card.dataset.name;
-    const price = parseInt(card.dataset.price) || 0;
-    const img   = card.dataset.img;
-    const cat   = card.dataset.cat;
-    if (cart[id]) { cart[id].qty++; } else { cart[id] = { id, name, price, img, cat, qty: 1 }; }
-    btn.textContent = '✓ Added!';
-    btn.classList.add('added');
-    setTimeout(() => { btn.innerHTML = '🛒 Add'; btn.classList.remove('added'); }, 1500);
-    updateCartUI();
-    shakeCartBtn();
-    showToast('Added to cart! Tap Cart to review.');
-    /* Cart drawer does NOT open automatically */
+function shakeCartBtn() {
+  const btn = document.getElementById('cartNavBtn');
+  btn.classList.remove('shake');
+  void btn.offsetWidth;
+  btn.classList.add('shake');
+  setTimeout(() => btn.classList.remove('shake'), 500);
+}
+
+function addToCart(btn) {
+  const card  = btn.closest('.product-card');
+  const id    = card.dataset.id;
+  const name  = card.dataset.name;
+  const price = parseInt(card.dataset.price) || 0;
+  const img   = card.dataset.img;
+  const cat   = card.dataset.cat;
+
+  if (cart[id]) {
+    cart[id].qty++;
+  } else {
+    cart[id] = { id, name, price, img, cat, qty: 1 };
   }
 
-  function changeQty(id, delta) {
-    if (!cart[id]) return;
-    cart[id].qty += delta;
-    if (cart[id].qty <= 0) delete cart[id];
-    updateCartUI();
-  }
-  function removeItem(id) { delete cart[id]; updateCartUI(); }
+  btn.textContent = '✓ Added!';
+  btn.classList.add('added');
 
-  function updateCartUI() {
-    const items = Object.values(cart);
-    const total = items.reduce((s, i) => s + i.price * i.qty, 0);
-    const count = items.reduce((s, i) => s + i.qty, 0);
-    const badge = document.getElementById('cartCount');
-    badge.textContent = count;
-    badge.classList.toggle('visible', count > 0);
-    document.getElementById('cartHeaderCount').textContent = count > 0 ? '(' + count + ' item' + (count !== 1 ? 's' : '') + ')' : '';
-    document.getElementById('cartTotal').textContent = total > 0 ? total.toLocaleString() : 'TBC';
-    document.getElementById('cartSubmitBtn').disabled = count === 0;
-    const container = document.getElementById('cartItems');
-    const empty = document.getElementById('cartEmpty');
-    container.querySelectorAll('.cart-item').forEach(el => el.remove());
-    if (items.length === 0) { empty.style.display = ''; return; }
-    empty.style.display = 'none';
-    items.forEach(item => {
-      const priceStr = item.price > 0 ? 'K' + (item.price * item.qty).toLocaleString() + ' <span style="font-weight:400;color:var(--ink-light)">x ' + item.qty + '</span>' : 'Enquire';
-      const el = document.createElement('div');
-      el.className = 'cart-item';
-      el.innerHTML =
-        '<img class="cart-item-img" src="' + item.img + '" alt="' + item.name + '" onerror="this.style.opacity=0"/>' +
-        '<div class="cart-item-info">' +
-          '<div class="cart-item-cat">' + item.cat + '</div>' +
-          '<div class="cart-item-name" title="' + item.name + '">' + item.name + '</div>' +
-          '<div class="cart-item-price">' + priceStr + '</div>' +
-        '</div>' +
-        '<div class="cart-item-controls">' +
-          '<button class="qty-btn" onclick="changeQty(\'' + item.id + '\',-1)">−</button>' +
-          '<div class="qty-num">' + item.qty + '</div>' +
-          '<button class="qty-btn" onclick="changeQty(\'' + item.id + '\',1)">+</button>' +
-          '<button class="cart-item-remove" onclick="removeItem(\'' + item.id + '\')" title="Remove">🗑</button>' +
-        '</div>';
-      container.appendChild(el);
-    });
-  }
+  setTimeout(() => {
+    btn.innerHTML = '🛒 Add';
+    btn.classList.remove('added');
+  }, 1500);
 
-  function submitOrder() {
-    const items = Object.values(cart);
-    if (items.length === 0) return;
-    const total = items.reduce((s, i) => s + i.price * i.qty, 0);
-    let msg = '🛒 *New Order — Seeken Catalog*\n';
-    msg += '━━━━━━━━━━━━━━━━━━━━\n';
-    items.forEach((item, i) => {
-      msg += (i + 1) + '. *' + item.name + '*\n';
-      const priceStr = item.price > 0 ? 'K' + (item.price * item.qty).toLocaleString() : 'Price TBC';
-      msg += '   Qty: ' + item.qty + '  |  ' + priceStr + '\n';
-    });
-    msg += '━━━━━━━━━━━━━━━━━━━━\n';
-    msg += total > 0 ? '*TOTAL: K' + total.toLocaleString() + '*\n\n' : '*TOTAL: Please confirm pricing*\n\n';
-    msg += 'Please confirm availability and delivery. Thank you! 🙏';
-    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+  updateCartUI();
+  shakeCartBtn();
+  showToast('Added to cart! Tap Cart to review.');
+}
+
+function changeQty(id, delta) {
+  if (!cart[id]) return;
+  cart[id].qty += delta;
+  if (cart[id].qty <= 0) delete cart[id];
+  updateCartUI();
+}
+
+function removeItem(id) {
+  delete cart[id];
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const items = Object.values(cart);
+  const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+  const count = items.reduce((s, i) => s + i.qty, 0);
+
+  const badge = document.getElementById('cartCount');
+  badge.textContent = count;
+  badge.classList.toggle('visible', count > 0);
+
+  document.getElementById('cartHeaderCount').textContent =
+    count > 0 ? '(' + count + ' item' + (count !== 1 ? 's' : '') + ')' : '';
+
+  document.getElementById('cartTotal').textContent =
+    total > 0 ? total.toLocaleString() : 'TBC';
+
+  document.getElementById('cartSubmitBtn').disabled = count === 0;
+
+  const container = document.getElementById('cartItems');
+  const empty = document.getElementById('cartEmpty');
+
+  container.querySelectorAll('.cart-item').forEach(el => el.remove());
+
+  if (items.length === 0) {
+    empty.style.display = '';
+    return;
   }
 
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    clearTimeout(window._toastTimer);
-    window._toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
-  }
+  empty.style.display = 'none';
 
-  function filterProducts(cat, btn) {
-    document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.product-card').forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-    });
-  }
+  items.forEach(item => {
+    const priceStr = item.price > 0
+      ? 'K' + (item.price * item.qty).toLocaleString() +
+        ' <span style="font-weight:400;color:var(--ink-light)">x ' + item.qty + '</span>'
+      : 'Enquire';
 
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 50); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.06 });
-  reveals.forEach(el => observer.observe(el));
+    const el = document.createElement('div');
+    el.className = 'cart-item';
+
+    el.innerHTML =
+      '<img class="cart-item-img" src="' + item.img + '" alt="' + item.name + '" onerror="this.style.opacity=0"/>' +
+      '<div class="cart-item-info">' +
+        '<div class="cart-item-cat">' + item.cat + '</div>' +
+        '<div class="cart-item-name" title="' + item.name + '">' + item.name + '</div>' +
+        '<div class="cart-item-price">' + priceStr + '</div>' +
+      '</div>' +
+      '<div class="cart-item-controls">' +
+        '<button class="qty-btn" onclick="changeQty(\'' + item.id + '\',-1)">−</button>' +
+        '<div class="qty-num">' + item.qty + '</div>' +
+        '<button class="qty-btn" onclick="changeQty(\'' + item.id + '\',1)">+</button>' +
+        '<button class="cart-item-remove" onclick="removeItem(\'' + item.id + '\')" title="Remove">🗑</button>' +
+      '</div>';
+
+    container.appendChild(el);
+  });
+}
+
+function submitOrder() {
+  const items = Object.values(cart);
+  if (items.length === 0) return;
+
+  const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+
+  let msg = '🛒 *New Order — Seeken Catalog*\n';
+  msg += '━━━━━━━━━━━━━━━━━━━━\n';
+
+  items.forEach((item, i) => {
+    msg += (i + 1) + '. *' + item.name + '*\n';
+
+    if (item.price > 0) {
+      const unitPrice = 'K' + item.price.toLocaleString();
+      const totalPrice = 'K' + (item.price * item.qty).toLocaleString();
+
+      msg += '   Qty: ' + item.qty + '\n';
+      msg += '   Unit Price: ' + unitPrice + '\n';
+      msg += '   Total: ' + totalPrice + '\n';
+    } else {
+      msg += '   Qty: ' + item.qty + '  |  Price TBC\n';
+    }
+  });
+
+  msg += '━━━━━━━━━━━━━━━━━━━━\n';
+
+  msg += total > 0
+    ? '*TOTAL: K' + total.toLocaleString() + '*\n\n'
+    : '*TOTAL: Please confirm pricing*\n\n';
+
+  msg += 'Please confirm availability and delivery. Thank you! 🙏';
+
+  window.open(
+    'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg),
+    '_blank'
+  );
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.style.display =
+      (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 50);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06 });
+
+reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
